@@ -42,6 +42,7 @@ export class Nav implements OnInit {
         this.creds = {};
       },
       error: error => {
+        console.log(error);
         this.toast.error(error.error);
       }
     });
