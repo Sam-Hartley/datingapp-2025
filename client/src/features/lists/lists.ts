@@ -30,6 +30,10 @@ export class Lists implements OnInit {
   }
 
   setPredicate(predicate: string){
+    console.log("predicate.............");
+    console.log(predicate);
+    console.log("this.predicate................");
+    console.log(this.predicate);
     if(this.predicate !== predicate){
       this.predicate = predicate;
       this.loadLikes();
@@ -39,7 +43,6 @@ export class Lists implements OnInit {
   loadLikes(){
     this.likesService.getLikes(this.predicate, this.pageNumber, this.pageSize).subscribe({
       next: response => this.paginatedResult.set(response)
-      //next: response => console.log(response)
     })
   }
 
